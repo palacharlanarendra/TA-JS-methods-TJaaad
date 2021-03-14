@@ -21,12 +21,8 @@ console.log(message.includes("is"));
 // Log true or false based on whether the word "Is" exist in message or not
 console.log(message.includes("Is"));
 // Check and log whether the word from index 3 to 6 is "you" or not (use slice)
-let splicedString = message.slice(3,6);
-if(splicedString=="you"){
-    console.log(true);
-}else{
-    console.log(false);
-}
+console.log(message.slice(3,6) =="you");
+
 // Check and log whether the word from index 7 to 8 is "a" or not
 let splicedString = message.slice(7,8);
 if(splicedString=="a"){
@@ -63,9 +59,7 @@ newMessage = message.replace("thinking","decide");
 console.log(newMessage);
 // Log all the characters from the message variable (you can user for..of loop on string)
 for(let i of message){
-    for(let k=0;k<i.length;k++){
-        console.log(i[k]);
-    }
+    console.log(i);
 }
 // Split all the words in message (split by " " space) and store it in a variable messageArray
 let messageArray = message.split(" ");
