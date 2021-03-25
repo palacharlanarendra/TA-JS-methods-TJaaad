@@ -116,4 +116,4 @@ quote.slice(0,30)+"...";
 */
 quote.startsWith("A");//false
 from.startsWith("A");//false
-to.startsWith("A");//true
+to.startsWith("A");//true true
