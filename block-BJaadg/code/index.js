@@ -15,7 +15,7 @@ quote.charAt(indexOfIs);
 /*
 3. Log the message saying `The index of first is in quote is 7`
 */
-console.log(`The index of first is in quote is 6`);
+console.log(`The index of first is in quote is ${indexOfIs}`);
 /*
 4. Log the message for first 6 characters of quote like this.
   The character at index 0 is 'T'
@@ -25,13 +25,9 @@ console.log(`The index of first is in quote is 6`);
   The character at index 4 is 'e'
   The character at index 5 is ' '
 */
-console.log( `The character at index 0 is '${quote.charAt(0)}'`);
-console.log( `The character at index 1 is '${quote.charAt(1)}'`);
-console.log( `The character at index 2 is '${quote.charAt(2)}'`);
-console.log( `The character at index 3 is '${quote.charAt(3)}'`);
-console.log( `The character at index 4 is '${quote.charAt(4)}'`);
-console.log( `The character at index 5 is '${quote.charAt(5)}'`);
-console.log( `The character at index 6 is '${quote.charAt(6)}'`);
+for(let i=0;i<=5;i++){
+  console.log(quote[index]);
+}
 /*
 5. Using the variable from , to and quote variable dispaly this message
   "Syrio Forel said There is only one thing we say to death: Not today to Arya Stark." (use concat method)
@@ -62,10 +58,13 @@ quote.split(" ");
 /*
 11. Change the word "today" in quoteSplitted to "tomorrow" and join all the words to form a sentance.
 */
-quote[10]="tommorrow";
+split = quote.split(" ");
+split[split.length-1]="tommorrrow";
+split.join(" ");
 /*
 12. Find the index of second "o" in quote. Use indexOf
 */
+let quote = 'There is only one thing we say to death: Not today';
 quote.indexOf("o", quote.indexOf("o") + 1);
 /*
 13. Find the last index of letter "a" in quote.
@@ -97,9 +96,8 @@ if(quote.length<70){
 /*
 17. Log the repeat of "Hello World!" 10 times.
 */
-for(var i=0;i<10;i++){
-  console.log("Hello World!");
-}
+console.log("Hello World!".repeat(10));
+
 /*
 18. Replace today to tomorrow in quote.
 */
@@ -116,6 +114,6 @@ quote.slice(0,30)+"...";
 /*
 21. Find out does quote, from, to starts with "A"
 */
-quote[0]==="A";//false
-from[0]==="A";//false
-to[0]==="A";//true
+quote.startsWith("A");//false
+from.startsWith("A");//false
+to.startsWith("A");//true true
