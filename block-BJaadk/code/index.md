@@ -1,7 +1,7 @@
 For the given code below you have to draw the diagram of how these things are working. Make it similar to the how it was done in previous (Visualise Array Methods) exercise.
 
 - Keep the images in the `img` folder
-- using the `![](./img/imagename.png)` add images below each code snippet
+- using the `![](./images/1.jpg)` add images below each code snippet
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -10,7 +10,7 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
-![](./img/main.png)
+![](./images/1.jpg)
 
 
 ```js
@@ -20,7 +20,7 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
-
+![](./images/2.jpg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function double(num) {
@@ -28,7 +28,9 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
-
+![](./images/3.jpg)
+![](./images/4.jpg)
+![](./images/5.jpg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function double(num) {
