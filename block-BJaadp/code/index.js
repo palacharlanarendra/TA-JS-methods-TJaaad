@@ -16,19 +16,89 @@ let persons = [
 // NOTE: Use reduce method whereever you can to solve this exercise:
 
 // Find the average grade
+let newArray=[];
+for(let i=0;i<persons.length;i++){
+  newArray.push(persons[i].grade);
+}
+let sum= newArray.reduce((acc,element)=>acc+element);
+console.log(sum/persons.length);
+//11.083333333333334
 
 // Find the average grade of male
-
+let newMaleArray=[];
+for(let elements of persons){
+  if(elements.sex=="M"){
+    newMaleArray.push(elements.grade);
+  }
+}
+let sumMale= newMaleArray.reduce((acc,element)=>acc+element);
+console.log(sumMale/newMaleArray.length);//8.66
 // Find the average grade of female
-
+let newFemaleArray=[];
+for(let elements of persons){
+  if(elements.sex=="F"){
+    newFemaleArray.push(elements.grade);
+  }
+}
+let sumMale= newFemaleArray.reduce((acc,element)=>acc+element);
+console.log(sumMale/newFemaleArray.length);//13.5
 // Find the highest grade
-
+let grades=[];
+for(let elements of persons){
+  grades.push(elements.grade); 
+}
+let highest =grades[0];
+for(let elem of grades){
+  if(highest<elem){
+    highest=elem;
+  }
+}
+console.log(highest);
 // Find the highest grade in male
-
+let grades=[];
+for(let elements of persons){
+  if(elements.sex=="M"){
+    grades.push(elements.grade);
+  }
+   
+}
+let highest =grades[0];
+for(let elem of grades){
+  if(highest<elem){
+    highest=elem;
+  }
+}
+console.log(highest);
 // Find the highest grade in female
-
+let grades=[];
+for(let elements of persons){
+  if(elements.sex=="F"){
+    grades.push(elements.grade);
+  }
+   
+}
+let highest =grades[0];
+for(let elem of grades){
+  if(highest<elem){
+    highest=elem;
+  }
+}
+console.log(highest);
 // Find the highest grade for people whose name starts with 'J' or 'P'
-
+let grades=[];
+for(let elements of persons){
+  if(elements.name.startsWith("J")||elements.name.startsWith("P")){
+    grades.push(elements.grade);
+  }
+   
+}
+let highest =grades[0];
+for(let elem of grades){
+  if(highest<elem){
+    highest=elem;
+  }
+}
+console.log(highest);
 const fruitBasket = [
   'banana',
   'cherry',
@@ -51,7 +121,19 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
+let fruitsObj = {
+};
+for(let i=0;i<fruitBasket.length;i++){
+  var element = fruitBasket[i];
+  var prev = fruitsObj[element];
+  if(prev==undefined){
+    fruitsObj[element]=1;
+  }else{
+    fruitsObj[element]=prev+1;
+  }
+}
 
+//{banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
@@ -61,6 +143,11 @@ Output:
 
 [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
 */
+let fruitsArray=[];
+for(key in fruitsObj){
+  fruitsArray.push([key,fruitsObj[key]]);
+}
+console.log(fruitsArray);
 
 const data = [
   [1, 2, 3],
@@ -68,7 +155,7 @@ const data = [
   [7, 8, 9],
   [10, 11, 12],
 ];
-
+data.reduce((acc,element)=>acc.concat(element));
 // Using reduce flat data array
 
 const dataTwo = [
@@ -77,8 +164,12 @@ const dataTwo = [
   [7, 8, 9],
   [[10, 11], 12],
 ];
+var hello=dataTwo.reduce((acc,element)=>acc.concat(element),[]);
+hello.reduce((accum,elements)=>
+ accum.concat(elements)
+ ,[]);
 
-// Using reduce flat dataTwo array
+// Using reduce , flat dataTwo array
 
 /*
 
@@ -90,6 +181,8 @@ Create these functions which accepts a number value and returns a number value:
   - `half` converts the value to half and return the integer value not decimal (use Math.round(21.5) => 21)
 */
 
+
+}
 let pipeline = [
   increment,
   double,
@@ -114,6 +207,48 @@ EXAMPLE:
 
   ...
 */
+let pipeline = [
+  increment,
+  double,
+  decrement,
+  decrement,
+  double,
+  triple,
+  half,
+  increment,
+];
+increment=(num)=>num+1;
+half=(num)=>num/2;
+double=(num)=>num*2;
+decrement=(num)=>num-1;
+triple=(num)=>num*3;
+increment=(num)=>num+1;
+let initialValue =3;
+for(let element of pipeline){
+
+  initialValue=element(initialValue);
+  console.log(initialValue);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let pipeline2 = [
   increment,
@@ -128,5 +263,6 @@ let pipeline2 = [
   increment,
   triple,
 ];
+
 
 // Find the output using pipeline2 the initial value if 8
