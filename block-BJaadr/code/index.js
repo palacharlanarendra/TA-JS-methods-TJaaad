@@ -1,17 +1,44 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
-
 function countAllPeople() {
-  // your code goes here
+  var array=[];
+   got.houses.reduce((acc,elem)=>array.push(elem.people.length));
+   return array.reduce((acc,elem)=>acc+elem),0;
+   
 }
-
+countAllPeople();
 function peopleByHouses() {
-  // your code goes here
+  var obj={}
+  var array=[];
+  var array2=[];
+   got.houses.reduce((acc,elem)=>array.push(elem.people.length));
+   got.houses.reduce((acc,elem)=>array2.push(elem.name),[]);
+   for(let i=0;i<got.houses.length;i++){
+        obj[array2[i]]=array[i];
+    }
+    return obj;
+ 
 }
-
+peopleByHouses();
 function everyone() {
-  // your code goes here
+  var names=[];
+  var names2=[];
+  var names3=[];
+  var names4=[];
+  var names5=[];
+  // for(let i=0;i<got.houses.length;i++){
+  //   for(let j=0;j<got.houses[i].people.length;j++){
+  //     names.push(got.houses[i].people[j].name);
+  //   }  
+  // }
+  // return names
+   got.houses.reduce((acc,elem)=>names.push(elem.people)),0;
+   names.reduce((acc,elem)=>names2.push(elem)),0;
+   names2.reduce((acc,elem)=>names3.push(elem)),0;
+   names3.reduce((acc,elem)=>names4.push(elem)),0;
+   names4.reduce((acc,elem)=>names5.push(elem)),0;
+   console.log(names5.name);
 }
-
+everyone();
 function nameWithS() {
   // your code goes here
 }
@@ -63,3 +90,5 @@ console.log(surnameWithA());
 console.log(peopleNameOfAllHouses());
 // Output should be
 // {Arryns: ["Jon Arryn"], Baratheons: ["Robert Baratheon", "Stannis Baratheon", "Renly Baratheon", "Joffrey Baratheon", "Tommen Baratheon", "Myrcella Baratheon"], Dothrakis: ["Khal Drogo"], Freys: ["Walder Frey"], Greyjoys: ["Balon Greyjoy", "Theon Greyjoy", "Yara Greyjoy"], Lannisters: ["Tywin Lannister", "Tyrion Lannister", "Jaime Lannister", "Cersei Baratheon"], Redwyne: ["Olenna Tyrell"], Starks: ["Eddard Stark", "Benjen Stark", "Robb Stark", "Sansa Stark", "Arya Stark", "Brandon Stark", "Rickon Stark", "Jon Snow"], Targaryens: ["Daenerys Targaryen", "Viserys Targaryen"], Tullys: ["Catelyn Stark", "Lysa Arryn", "Edmure Tully", "Brynden Tully"], Tyrells: ["Margaery Baratheon", "Loras Tyrell"]}
+
+
