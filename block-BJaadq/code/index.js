@@ -1,35 +1,97 @@
 // NOTE: You can not use reduce methods to solve this exercise
 
 function countAllPeople() {
-  // your code goes here
+  var sum=0;
+  for(let i=0;i<got.houses.length;i++){
+    sum+=got.houses[i].people.length;
+  }
+  console.log(sum);
 }
-
-function peopleByHouses() {
-  // your code goes here
+countAllPeople();
+function peopleByHouses(){
+  var obj={}
+  for(let i=0;i<got.houses.length;i++){
+    obj[got.houses[i].name]=got.houses[i].people.length;
+  }
+  return obj;
 }
-
-function everyone() {
-  // your code goes here
+peopleByHouses()//{Starks: 8, Lannisters: 4, Baratheons: 6, Targaryens: 2, Greyjoys: 3, …}
+function everyone(){
+  var names=[];
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0;j<got.houses[i].people.length;j++){
+      names.push(got.houses[i].people[j].name);
+    }  
+  }
+  return names;
 }
-
+everyone();
 function nameWithS() {
-  // your code goes here
+  var namesWithS=[];
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0;j<got.houses[i].people.length;j++){
+      if(got.houses[i].people[j].name.startsWith("S")){
+        namesWithS.push(got.houses[i].people[j].name);
+      }
+    }  
+  }
+  return namesWithS;
 }
-
+//["Eddard Stark", "Benjen Stark", "Robb Stark", "Sansa Stark", "Arya Stark", "Brandon Stark", "Rickon Stark Upper", "Jon Snow", "Tywin Lannister", "Tyrion Lannister", "Jaime Lannister", "Cersei Baratheon", "Robert Baratheon", "Stannis Baratheon", "Renly Baratheon", "Joffrey Baratheon", "Tommen Baratheon", "Myrcella Baratheon", "Daenerys Targaryen", "Viserys Targaryen", "Balon Greyjoy", "Theon Greyjoy", "Yara Greyjoy", "Margaery Baratheon", "Loras Tyrell", "Catelyn Stark", "Lysa Arryn", "Edmure Tully", "Brynden Tully", "Olenna Tyrell", "Walder Frey", "Jon Arryn", "Khal Drogo"]
+nameWithS();
 function nameWithA() {
-  // your code goes here
+  var namesWithA=[];
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0;j<got.houses[i].people.length;j++){
+      if(got.houses[i].people[j].name.startsWith("A")){
+        namesWithA.push(got.houses[i].people[j].name);
+      }
+    }  
+  }
+  return namesWithA;
 }
-
+nameWithA();//["Arya Stark"]
 function surnameWithS() {
-  // your code goes here
+  var surNamesWithS=[];
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0;j<got.houses[i].people.length;j++){
+      if(got.houses[i].people[j].name.includes(" S")){
+        surNamesWithS.push(got.houses[i].people[j].name);
+      }
+    }  
+  }
+  return surNamesWithS;
+}
+surnameWithS()
+//["Eddard Stark", "Benjen Stark", "Robb Stark", "Sansa Stark", "Arya Stark", "Brandon Stark", "Rickon Stark Upper", "Jon Snow", "Catelyn Stark"]
+function surnameWithA() {
+  var surNamesWithA=[];
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0;j<got.houses[i].people.length;j++){
+      if(got.houses[i].people[j].name.includes(" A")){
+        surNamesWithA.push(got.houses[i].people[j].name);
+      }
+    }  
+  }
+  return surNamesWithA;
 }
 
-function surnameWithA() {
-  // your code goes here
-}
+
 
 function peopleNameOfAllHouses() {
-  // your code goes here
+  var obj={}
+  
+  for(let i=0;i<got.houses.length;i++){
+    var names=[]
+    for(let j=0;j<got.houses[i].people.length;j++){
+     
+      names.push(got.houses[i].people[j].name);
+      obj[got.houses[i].name]=names;
+      
+    }
+    
+  }
+  return obj;
 }
 
 // Testing your result after writing your function
